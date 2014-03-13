@@ -13,7 +13,7 @@
     </head>
     <body>
             <form method="post" action="SrvEmpleados">
-
+            
         <table>
             <tr>
                 <td>User</td>
@@ -23,8 +23,11 @@
                 <td><input type="text" name="USUARIO"></td>
                 <td><input type="password" name="PASSWORD"></td>
                 <td><input type="submit" value="buscar"></td>
-                <td><input type="text" name="as"></td>
+                <input type="radio" name="group1" value= "teruel" checked> teruel<br>
+                <input type="radio" name="group1" value= "soria"> soria<br>
             </tr>
+            
         </table>
+        </form>
     </body>
 </html>

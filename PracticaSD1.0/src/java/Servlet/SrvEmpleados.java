@@ -89,8 +89,12 @@ public class SrvEmpleados extends HttpServlet {
             out.println("<title>Acceso</title>");
             out.println("</head>");
             out.println("<body>");
+            out.println("<form action = >");
+            
+                        
             out.println("<table>");
             out.println("<tr>");
+            out.println(request.getParameter("group1"));
             out.println("<td>User</td>");
             out.println("<td>Password</td>");
             out.println("<td>DNI</td>");
@@ -102,8 +106,7 @@ public class SrvEmpleados extends HttpServlet {
             
             
             res = empleado.Listar();
-            
-            
+                       
             if((request.getParameter("USUARIO")!=""))
                 res= empleado.Buscar(request.getParameter("USUARIO"),request.getParameter("PASSWORD"));
             if((request.getParameter("USUARIO")=="") && (request.getParameter("PASSWORD")==""))
@@ -131,7 +134,7 @@ public class SrvEmpleados extends HttpServlet {
                 out.println("<td>"+ departamento +"</td>");
                 out.println("<td>"+ sucursal +"</td>");
                 out.println("</tr>");
-                
+
             }
             
             out.println("</table>");
