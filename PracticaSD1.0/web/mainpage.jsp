@@ -23,6 +23,7 @@
                 <td><input type="text" name="USUARIO"></td>
                 <td><input type="password" name="PASSWORD"></td>
                 <td><input type="submit" value="buscar"></td>
+                <td><input type="text" name="as"></td>
             </tr>
         </table>
     </body>
