@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import AccesoDatos.AccesoEmpleados;
+import AccesoDatos.*;
 import java.sql.*;
 import java.util.logging.*;
 /**
@@ -75,6 +75,7 @@ public class SrvEmpleados extends HttpServlet {
             
             ResultSet res;
             AccesoEmpleados empleado = new AccesoEmpleados();
+            ActualizarEmpleado newempleado = new ActualizarEmpleado();
             String usuario = "";
             String password ="";
             String dni="";
@@ -147,6 +148,8 @@ public class SrvEmpleados extends HttpServlet {
                     out.println("<td><input type=\"text\" name=\"SUCURSAL\""
                             + " value=" + res.getString("sucursal")+"></td>");
                     out.println("<td><input type=\"submit\" value=\"Actualizar\"></td>");
+                                        
+                    newempleado.Actualizar(dni, nombre, apellidos, us, pw, departamento, sucursal,request.getParameter("USUARIO"));
                 }
                 else{    
                     out.println("<tr>");

@@ -42,7 +42,7 @@ public class AccesoEmpleados extends Conexion{
 
      try{
             getStmt();//estado de la comunicacion
-            result= stmt.executeQuery("SELECT * FROM empleados WHERE (USUARIO LIKE'" + user+"%') AND (PASSWORD LIKE'"+pw+"%') ");//consulta a la bd
+            result= stmt.executeQuery("SELECT * FROM empleados WHERE (USUARIO LIKE'" + user+"') AND (PASSWORD LIKE'"+pw+"') ");//consulta a la bd
             return result;//devuelve los resultados
         }catch (SQLException ex){
             System.err.println("Excepcion SQL: " +ex.getMessage());

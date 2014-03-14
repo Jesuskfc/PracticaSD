@@ -22,7 +22,7 @@ public class RegistroEmpleados extends Conexion {
         Conectar();
     }
     
-    public void Agregar(String nombre, String apellidos, String dni, String departamental, String sucursal, String user, String pw ) throws Exception{
+    public void Agregar(String dni, String nombre, String apellidos, String user, String pw, String departamental, String sucursal ) throws Exception{
 
         try{
             getStmt();//estado de la comunicacion
