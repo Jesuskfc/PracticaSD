@@ -148,8 +148,16 @@ public class SrvEmpleados extends HttpServlet {
                     out.println("<td><input type=\"text\" name=\"SUCURSAL\""
                             + " value=" + res.getString("sucursal")+"></td>");
                     out.println("<td><input type=\"submit\" value=\"Actualizar\"></td>");
+                    
+                    out.println("</form>");
+                    
+                    out.println("<form method=\"post\" action=\"SrvEliminar\">");
+                    out.println("<td><input type=\"text\" name=\"USUARIO\""
+                            + " value=" + res.getString("usuario")+"></td>");
+                    out.println("<td><input type=\"submit\" value=\"Eliminar\"></td>");
+                    out.println("</form>");
                                         
-                    newempleado.Actualizar(dni, nombre, apellidos, us, pw, departamento, sucursal,request.getParameter("USUARIO"));
+                    
                 }
                 else{    
                     out.println("<tr>");

@@ -28,9 +28,12 @@ public class ActualizarEmpleado extends Conexion {
     public void Actualizar(String user, String pw, String dni, String nombre, String apellidos, String departamento, String sucursal) throws Exception{
         try{
             getStmt();//estado de la comunicacion
-            System.out.println("papa" + dni+nombre);
-            int result=stmt.executeUpdate("UPDATE empleados SET DNI= '" + dni + "', apellidos ='" + apellidos + "'" );//consulta a la bd
-            System.out.println("Este es el resultado: " + result);         
+            
+            stmt.executeUpdate("UPDATE empleados SET DNI= '" + dni + "', apellidos='" + apellidos + "', nombre='" + nombre + "' ,password ='" + pw + "', departamento ='" + departamento + "', sucursal ='" + sucursal + "' WHERE USUARIO='"+user+"'" );//consulta a la bd
+            System.out.println("Este es el resultado: " + result);  
+            
+            //stmt.executeUpdate("UPDATE empleados SET DNI= '" + dni + "', apellidos='" + apellidos + "', nombre='" + nombre + "' ,password ='" + pw + "', departamento ='" + departamento + "', sucursal ='" + sucursal + "'" );
+            
 //return result;//devuelve los resultados
         }catch (SQLException ex){
             System.err.println("Excepcion SQL: " +ex.getMessage());
