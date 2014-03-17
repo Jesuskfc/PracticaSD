@@ -5,30 +5,37 @@
  */
 
 package AccesoDatos;
+
 import java.sql.*;
 import AccesoDatos.*;
-import java.util.logging.*;
+import java.util.logging.*;//para trabajar con la bd
+
 /**
  *
- * @author jesuskfc
+ * @author USUARIO
  */
-public class ActualizarEmpleado extends Conexion{
-    
-    public ActualizarEmpleado(){
+public class ActualizarEmpleado extends Conexion {
+    private String user;
+    private String password;
+    private ResultSet result;//devuelve un grupo de datos
+
+    public ActualizarEmpleado() {
         Conectar();
     }
     
-    public void Actualizar(String dni, String nombre, String apellidos, String user, String pw, String departamental, String sucursal, String olduser) throws Exception{
-
+        
+    
+    public void Actualizar(String user, String pw, String dni, String nombre, String apellidos, String departamento, String sucursal) throws Exception{
         try{
             getStmt();//estado de la comunicacion
-            stmt.executeUpdate("UPDATE empleados SET dni='"+dni+"',nombre='"+nombre+"'");//consulta a la bd
-            //UPDATE  `sddb`.`empleados` SET  `apellidos` =  'Gonzalez' WHERE  `empleados`.`usuario` =  'xaxo93';
+            System.out.println("papa" + dni+nombre);
+            int result=stmt.executeUpdate("UPDATE empleados SET DNI= '" + dni + "', apellidos ='" + apellidos + "'" );//consulta a la bd
+            System.out.println("Este es el resultado: " + result);         
+//return result;//devuelve los resultados
         }catch (SQLException ex){
             System.err.println("Excepcion SQL: " +ex.getMessage());
-        }
-     //UPDATE empleados SET dni='121',nombre='asf'
-        
-        //,apellidos='"+apellidos+"',usuario='"+user+"',password='"+pw+"',departamento='"+departamental+"',sucursal='"+sucursal+"'
+           // return null;
+        }   
     }
 }
+
