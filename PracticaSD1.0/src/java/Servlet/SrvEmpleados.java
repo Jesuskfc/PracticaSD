@@ -106,9 +106,10 @@ public class SrvEmpleados extends HttpServlet {
             res = empleado.Listar();
             
             
-            if((request.getParameter("USUARIO")!=""))
+            if((request.getParameter("USUARIO")!="") && (request.getParameter("PASSWORD")!="")){
+                res= empleado.Buscar(request.getParameter("USUARIO"),request.getParameter("PASSWORD"));
                 res = empleado.Listar();
-                //res= empleado.Buscar(request.getParameter("USUARIO"),request.getParameter("PASSWORD"));
+                }
             if((request.getParameter("USUARIO")=="") && (request.getParameter("PASSWORD")==""))
                 res= empleado.Listar();
               

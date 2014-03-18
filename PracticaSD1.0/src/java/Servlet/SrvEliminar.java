@@ -77,7 +77,7 @@ public class SrvEliminar extends HttpServlet {
             
             EliminarEmpleado empleado = new EliminarEmpleado();
            
-            
+            //  REQUESTDISPATCHER
             
             empleado.Eliminar(us);
             /* TODO output your page here. You may use following sample code. */

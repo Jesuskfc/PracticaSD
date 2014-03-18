@@ -10,6 +10,7 @@ import java.sql.*;
 import AccesoDatos.*;
 import java.util.logging.*;//para trabajar con la bd
 
+
 /**
  *
  * @author USUARIO
